@@ -88,8 +88,9 @@ def smallest_int(numbers):
         True
     """
 
+    #find a way to fix this
     if len(numbers) == 0:
-        return "None"
+        return
 
     else:
         smallest = numbers[0]
@@ -120,11 +121,18 @@ def largest_int(numbers):
         True
     """
 
-    largest_numbers = numbers[0]
 
+    if len(numbers) == 0:
+        return
 
+    else:
+        largest_numbers = numbers[0]
 
-    return 0
+        for number in numbers:
+            if number > largest_numbers:
+                largest_numbers = number
+        
+        return largest_numbers
 
 
 def halvesies(numbers):
@@ -142,7 +150,13 @@ def halvesies(numbers):
         [0.5, 2.5]
     """
 
-    return []
+    half_numbers = []
+
+    for number in numbers:
+        half_numbers.append(number / 2.0)
+
+
+    return half_numbers
 
 
 def word_lengths(words):
@@ -154,7 +168,12 @@ def word_lengths(words):
         [5, 3, 5, 4]
     """
 
-    return []
+    word_lengths = []
+
+    for word in words:
+        word_lengths.append(len(word))
+
+    return word_lengths
 
 
 def sum_numbers(numbers):
@@ -174,7 +193,16 @@ def sum_numbers(numbers):
         0
     """
 
-    return None
+    sum_numbers = 0
+
+    if len(numbers) == 0:
+        return 0
+
+    else:
+        for number in numbers:
+            sum_numbers = sum_numbers + number
+
+        return sum_numbers
 
 
 def mult_numbers(numbers):
@@ -197,7 +225,16 @@ def mult_numbers(numbers):
         1
     """
 
-    return None
+    mult_numbers = 1
+
+    if len(numbers) == 0:
+        return 1
+
+    else:
+        for number in numbers:
+            mult_numbers = mult_numbers * number
+
+        return mult_numbers
 
 
 def join_strings(words):
@@ -217,7 +254,16 @@ def join_strings(words):
         ''
     """
 
-    return "Not the right thing"
+    join_strings = words[0]
+
+    if len(words) == 0:
+        return
+
+    else:
+        for word in words:
+            join_strings.append(word)
+
+        return join_strings
 
 
 def average(numbers):
