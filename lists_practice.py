@@ -254,16 +254,14 @@ def join_strings(words):
         ''
     """
 
-    #haven't solved yet come back and fix
-
-    join_strings = []
+    join_strings = ""
 
     if len(words) == 0:
-        return " "
+        return ""
 
     else:
         for word in words:
-            join_strings.append(word)
+            join_strings = join_strings + word
 
         return join_strings
 
@@ -315,17 +313,24 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    join_strings_with_comma = []
+    #still dosn't work keep trying
+
+    join_strings_with_comma = ""
+
+    counter = 0
 
     if len(words) <= 1:
         return words[0]
 
     else:
         for word in words:
-            if words[-1]:
-                join_strings_with_comma.append(word)
+
+            if counter < len(words):
+                join_strings_with_comma = join_strings_with_comma + word + ", "
             else:
-                join_strings_with_comma.append(word + ", ")
+                join_strings_with_comma = join_strings_with_comma + word
+            
+            counter = counter + 1
 
         return join_strings_with_comma
 
@@ -353,7 +358,9 @@ def reverse_list(items):
         ['apple', 'berry', 'cherry']
     """
 
-    return []
+    reverse_list = items[::-1]
+
+    return reverse_list
 
 
 def reverse_list_in_place(items):
@@ -379,7 +386,10 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    return []
+    if len(items) == 0:
+        return
+    else:
+        return items[::-1]
 
 
 def duplicates(items):
