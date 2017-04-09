@@ -88,7 +88,6 @@ def smallest_int(numbers):
         True
     """
 
-    #find a way to fix this
     if len(numbers) == 0:
         return
 
@@ -385,9 +384,8 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
-
     if len(items) == 0:
-        return
+        return items
     else:
         return items[::-1]
 
@@ -417,9 +415,13 @@ def duplicates(items):
         >>> orig
         ['apple', 'apple', 'berry']
     """
+    duplicates = []
 
-    return []
+    for item in items:
+        if item is items:
+            duplicates.append(item)
 
+    return duplicates
 
 def find_letter_indices(words, letter):
     """Return list of indices where letter appears in each word.
@@ -448,7 +450,17 @@ def find_letter_indices(words, letter):
     `None`.)
     """
 
-    return []
+    counter = 0
+    find_letter = []
+
+    for word in words:
+        if words[counter] == counter:
+            if letter is word:
+                find_letter = findletter + counter
+
+        counter = counter + 1
+
+    return find_letter
 
 
 #####################################################################
