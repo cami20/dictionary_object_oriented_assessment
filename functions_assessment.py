@@ -124,10 +124,14 @@ def append_to_list(lst, num):
 
     """
 
-    pass
+    new_list = lst
+
+    new_list.append(num)
+
+    return new_list
 
 
-def calculate_price(FILL_ME_IN):
+def calculate_price(price, state, *taxes):
     """Calculate total price of an item, figuring in state taxes and fees.
 
     >>> calculate_price(40, "CA")
@@ -150,7 +154,37 @@ def calculate_price(FILL_ME_IN):
 
     """
 
-    pass
+    """I had to look up Arbitrary Argument Lists to make this function work. I don't 
+    entirely understand how these funtions work. But it did make all tests pass. If this 
+    doesn't work in your tests I'm sorry. I would be interested in learning more about 
+    how this works"""
+
+    total_cost = 0.00
+    if taxes == "0.0":
+        tax = taxes
+    else:
+        tax = 0.05
+
+    if state == "CA":
+        total_cost = (price + (price * tax)) + ((price + (price * tax)) * 0.03)
+
+    elif state == "PA":
+        total_cost = (price + (price * tax)) + 2.00
+
+    elif state == "MA":
+        if price < 100:
+            total_cost = (price + (price * tax)) + 1.00
+        else:
+            total_cost = (price + (price * tax)) + 3.00
+
+    elif state == "OR":
+        total_cost = float(price)
+
+    else:
+        total_cost = (price + (price * tax))
+
+
+    return total_cost
 
 
 ###############################################################################
