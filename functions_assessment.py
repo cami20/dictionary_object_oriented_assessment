@@ -199,6 +199,17 @@ def calculate_price(price, state, *taxes):
 #        isn't something we've discussed yet in class; you might need to google how to
 #        write a Python function that takes in an arbitrary number of arguments.
 
+
+def advanced_work(list, *additional_items):
+    """This function should take a presisting list and add items from an addional list 
+    to the list"""
+
+    if len(additional_items) > 0:
+        for item in additional_items:
+            list = list.append(item)
+
+    return list
+
 #    (b) Make a new function with a nested inner function.
 #        The outer function will take in a word.
 #        The inner function will multiply that word by 3.
@@ -210,6 +221,20 @@ def calculate_price(price, state, *taxes):
 
 #        >>> outer("Balloonicorn")
 #        ('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
+
+def advanced_nested(word):
+    """Should take a word then put it in a tuple"""
+
+    def inner_nested(words):
+        """should take a word and print it three times"""
+        tripple = words + words + words
+        return tripple
+
+    combo_nest = (word)
+
+    combo_nest = combo_nest.append(inner_nested(word))
+
+    return combo_nest
 
 
 ###############################################################################
