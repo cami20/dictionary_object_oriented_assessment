@@ -87,8 +87,9 @@ def foods_in_common(foods1, foods2):
         []
 
     """
+    in_common = foods1 & foods2
 
-    return ['the wrong thing']
+    return in_common
 
 
 def every_other_item(items):
@@ -133,7 +134,15 @@ def largest_n_items(items, n):
         [3, 3]
     """
 
-    return []
+    largest_items = []
+
+    counter = 0
+
+    items = items.sort()
+
+    largest_items = items[:n + 1:-1]
+
+    return largest_items
 
 
 #####################################################################

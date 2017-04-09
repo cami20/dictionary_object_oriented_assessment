@@ -16,14 +16,36 @@ go below this docstring.
 #    (a) Write a function that takes a town name as a string and evaluates to
 #        `True` if it is your hometown, and `False` otherwise.
 
+def town_name(name):
+    """Checks to see if your town matches my hometown"""
+
+
+    if name == "San Jose":
+        return True
+    else:
+        return
+
 #    (b) Write a function that takes a first and last name as arguments and
 #        returns the concatenation of the two names in one string.
+
+def first_last(name1, name2):
+    """Returns the users full name"""
+    full_name = name1 + name2
+
+    return full_name
 
 #    (c) Write a function that takes a home town, a first name, and a last name
 #        as arguments, calls both functions from part (a) and (b) and prints
 #        "Hi, 'full name here', we're from the same place!", or "Hi 'full name
 #        here', I'd like to visit 'town name here'!" depending on what the function
 #        from part (a) evaluates to.
+
+def introduction(town, first_name, last_name):
+    """Takes home town and full name and returns a frienly greeting"""
+    if town_name(name) == True:
+        print "Hi, %s, we're from the same place!" % first_last(first_name, last_name)
+    else:
+        print "Hi %s, I'd like to vist %s!" % first_last(first_name, last_name), town
 
 ###############################################################################
 
@@ -70,7 +92,10 @@ def is_berry(fruit):
 
     """
 
-    pass
+    if fruit == "Strawberry" or fruit == "raspberry" or fruit == "blackberry":
+        return True
+    else:
+        return False
 
 
 def shipping_cost(fruit):
@@ -84,7 +109,10 @@ def shipping_cost(fruit):
 
     """
 
-    pass
+    if is_berry(fruit) == True:
+        return 0
+    else:
+        return 5
 
 
 def append_to_list(lst, num):

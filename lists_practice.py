@@ -323,12 +323,11 @@ def join_strings_with_comma(words):
 
     else:
         for word in words:
-
-            if counter < len(words):
+            if counter < len(words) - 1:
                 join_strings_with_comma = join_strings_with_comma + word + ", "
             else:
                 join_strings_with_comma = join_strings_with_comma + word
-            
+
             counter = counter + 1
 
         return join_strings_with_comma
@@ -384,10 +383,9 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
-    if len(items) == 0:
-        return items
-    else:
-        return items[::-1]
+
+    
+    return items[::-1]
 
 
 def duplicates(items):
