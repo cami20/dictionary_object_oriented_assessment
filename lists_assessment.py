@@ -87,7 +87,13 @@ def foods_in_common(foods1, foods2):
         []
 
     """
-    in_common = foods1 & foods2
+    in_common = []
+    counter = 0
+
+    for food in foods1:
+        if foods1[counter] in foods2[::-1]:
+            in_common.append(food)
+        counter = counter + 1
 
     return in_common
 
@@ -135,14 +141,22 @@ def largest_n_items(items, n):
     """
 
     largest_items = []
+    largest = [1]
+    counter = n
 
-    counter = 0
+    if n == 0:
+        return []
 
-    items = items.sort()
+    else:
+        while counter > 0:
+            for item in items:
+                if item > largest:
+                    largest = item
+            largest_items.append(largest)
 
-    largest_items = items[:n + 1:-1]
+            counter = counter - 1
 
-    return largest_items
+        return largest_items
 
 
 #####################################################################
