@@ -50,7 +50,15 @@ def print_indices(items):
     
     """
 
-    print("Nothing at all")
+    #looked up enumerate on the internet when I ran into a road block on how 
+    #to make this function work without a counter.
+    #I still can't get it to print correctly or completely understand the function 
+    #I'd be interested in learning more about it
+
+    indices = enumerate(items)
+
+    for item in indices:
+        print item
 
 
 def foods_in_common(foods1, foods2):
@@ -87,11 +95,15 @@ def foods_in_common(foods1, foods2):
         []
 
     """
+    #I kinda got this function to work. It doesn't print out the way that the test
+    #wants it to because it prints out the duplicates and in a different order than
+    #the test cases
+
     in_common = []
     counter = 0
 
     for food in foods1:
-        if foods1[counter] in foods2[::-1]:
+        if foods1[counter] in foods2:
             in_common.append(food)
         counter = counter + 1
 
@@ -139,6 +151,11 @@ def largest_n_items(items, n):
         >>> largest_n_items([3, 3, 3, 2, 1], 2)
         [3, 3]
     """
+
+    #I got this function to create a new list with the langth of the inputed
+    #but doesn't return the largest numbers yet.
+    #I used the function that finds the largest number in a list from the practice
+    #but it is working differently here and I am still looking into why that is.
 
     largest_items = []
     largest = [1]
