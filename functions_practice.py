@@ -161,8 +161,18 @@ def total_meal_price(meal, tip):
 #    it's even or odd). Print sign and parity.
 
 def sign_and_parity(num):
-    
+    if num > 0:
+        return "Positive"
+    else:
+        return "Negative"
 
+    if num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+num2 = sign_and_parity(2)
+print num2
 
 ###############################################################################
 

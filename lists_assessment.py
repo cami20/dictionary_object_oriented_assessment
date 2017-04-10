@@ -162,7 +162,7 @@ def largest_n_items(items, n):
     #but it is working differently here and I am still looking into why that is.
 
     largest_items = []
-    largest = [1]
+    largest = 1
     counter = n
 
     if n == 0:
