@@ -95,19 +95,20 @@ def foods_in_common(foods1, foods2):
         []
 
     """
-    #I kinda got this function to work. It doesn't print out the way that the test
-    #wants it to because it prints out the duplicates and in a different order than
-    #the test cases
+    #I kinda got this function to work. By first creating a new set then comparing each
+    #item in both lists to see if they were the same. I used a counter to incriment between 
+    #the different spots in the lists. I used a set because it would remove any duplicate 
+    #entries which is what my biggest error was for a long time.
 
-    in_common = []
+    in_common = set([])
     counter = 0
 
     for food in foods1:
         if foods1[counter] in foods2:
-            in_common.append(food)
+            in_common.add(food)
         counter = counter + 1
 
-    return in_common
+    return sorted(in_common)
 
 
 def every_other_item(items):
@@ -126,6 +127,8 @@ def every_other_item(items):
        ... )
        ['you', 'are', 'good', 'at', 'code']
     """
+
+    #I used some creative list slicing to complete this function. 
 
     return items[::2]
 
