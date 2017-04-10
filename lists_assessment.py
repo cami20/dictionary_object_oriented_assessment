@@ -50,12 +50,13 @@ def print_indices(items):
     
     """
 
-    #looked up enumerate on the internet when I ran into a road block on how 
-    #to make this function work without a counter.
+    #I used the internet to look for suggestions on how to make this function work
+    #enumerate came up and seemed to fix the road block I was stuck on and to make 
+    #this function work without a counter.
     #I still can't get it to print correctly or completely understand the function 
     #I'd be interested in learning more about it
 
-    indices = enumerate(items)
+    indices = list(enumerate(items))
 
     for item in indices:
         print item
