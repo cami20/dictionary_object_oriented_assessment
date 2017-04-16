@@ -71,8 +71,6 @@ def get_melon_price(melon_name):
     else:
         return 'No price found'
 
-    #return melon_name
-
 
 def word_length_sorted(words):
     """Return list of word-lengths and words.
@@ -98,12 +96,13 @@ def word_length_sorted(words):
         count = len(word)
         if count not in word_count:
             word_count[count] = word
-        else:
-            word_count[count].append(word)
+        # else:
+        #     word_count[count].append(word)
         #word_count[word] = word_count.get(word, 0) + 1
         #print count
 
-    return word_count
+    for word in word_count.iteritems():
+        return word_count
 
 def translate_to_pirate_talk(phrase):
     """Translate phrase to pirate talk.
@@ -144,11 +143,26 @@ def translate_to_pirate_talk(phrase):
         'me swabbie be not a man!'
     """
 
-    translate_to_pirate_talk = {}
+    english_to_pirate_talk = {"sir": "matey",
+                                "hotel": "fleabag inn",
+                                "student": "swabbie",
+                                "man": "matey",
+                                "professor": "foul blaggart",
+                                "restaurant": "galley",
+                                "your": "yer",
+                                "excuse": "arr",
+                                "students": "swabbies",
+                                "are": "be",
+                                "restroom": "head",
+                                "my": "me",
+                                "is": "be"}
 
-    #for 
+    translate_to_pirate_talk = " "
 
-    return ""
+    for word in phrase:
+        translate_to_pirate_talk = translate_to_pirate_talk + english_to_pirate_talk.get(word)
+
+    return translate_to_pirate_talk
 
 
 def kids_game(names):
@@ -197,7 +211,17 @@ def kids_game(names):
     good solutions here will definitely require a dictionary.
     """
 
-    return []
+    kids_game = []
+    words = {}
+
+    for name in names:
+        count = name.index()
+        word[count] = name
+
+    print words
+
+
+    return kids_game
 
 #####################################################################
 # You can ignore everything below this.
