@@ -110,14 +110,16 @@ def get_sum_zero_pairs(numbers):
         [[-1, 1], [0, 0]]
     """
 
-    new = []
+    # still need to find a way to remove duplicates
+
+    sort_pairs = []
 
     for number in numbers:
         if ((number * (-1)) or number) in numbers:
-            if [number, (number * (-1))] not in new:
-                new.append([number, (number * (-1))])
+            if [number, (number * (-1))] not in sort_pairs:
+                sort_pairs.append([number, (number * (-1))])
 
-    return new
+    return sort_pairs
 
 
 def top_chars(phrase):
@@ -145,30 +147,24 @@ def top_chars(phrase):
 
     """
 
+    # still need to find a way to add multiple keys with same values
+
     word_count = {}
+    largest_keys = []
 
     for word in phrase:
-        word_count[word] = word_count.get(word, 0) + 1
+        if word != " ":
+            word_count[word] = word_count.get(word, 0) + 1
 
     values = word_count.values()
-    largest_index = value.index(max(values))
+    large_index = values.index(max(values))
 
     keys = word_count.keys()
-    largest_key = keys[largest_index]
-    # largest = values[0]
-    # largest_value = []
-    # i = 0
+    large_key = keys[large_index]
 
-    # for value in values:
-    #     if value >= largest:
-    #         largest_value.append(word_count.keys[i])
-    #     i = i + 1
+    largest_keys.append(large_key)
 
-    print values
-
-    #largest_value = sort(largest_value)
-
-    return largest_key
+    return largest_keys
 
 #####################################################################
 # You can ignore everything below this.
