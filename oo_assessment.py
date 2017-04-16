@@ -31,10 +31,11 @@ Part 1: Discussion
 6. How is a class attribute different than an instance attribute?
    Give an example of when you might use each.
 
-   A class attribute is used to define an attribute with in a class, a instance attribute 
-   defines an attribute when the class is inicalized. You would use a class attribute when 
-   you want an attribute to have a specific value throughout the program. You would use a 
-   instance attribute to give an attribute value one in that one specific moment.
+   A class attribute is used to define an attribute with in a class, a instance 
+   attribute defines an attribute when the class is inicalized. You would use a 
+   class attribute when you want an attribute to have a specific value throughout 
+   the program. You would use a instance attribute to give an attribute value one 
+   in that one specific moment.
 
 
 """
@@ -84,19 +85,30 @@ class Exam(object):
 		score = 0.00
 		correct = 0.00
 
-	if super(prints_question, self).__init__(self) == True:
-		corect = correct + 1
+		if super(prints_question, self).__init__(self) == True:
+			corect = correct + 1
 
-	score = correct / 100.00
+		score = correct / 100.00
 
 
 class StudentExam(object):
 	def __init__(self):
 		super(Student, self).__init__(first_name, last_name, address)
 
+		test_key = {}
+		while True:
+			super(Questions, self).__init__(question, correct_answer)
+            test_key[question] = correct_answer
 
 	def take_test(self):
-		super
-
+		super(admminister, self).__init__(question, correct_answer)
+		print self.score
 
 	def __repr__(self):
+
+def example(questions, answers):
+	new_exam = Exam()
+	new_student = Student()
+
+	new_exam.takes_question_and_answer()
+	new_exam.admminister()

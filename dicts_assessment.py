@@ -28,18 +28,14 @@ def count_words(phrase):
         >>> print_dict(count_words("Porcupine see, porcupine do."))
         {'Porcupine': 1, 'do.': 1, 'porcupine': 1, 'see,': 1}
     """
-    # currently sorts letters into dictionary then counts their occurance
-    # need to sort words and count them
 
     word_count = {}
+    phrase = phrase.split(" ")
 
     for word in phrase:
         word_count[word] = word_count.get(word, 0) + 1
 
     return word_count
-
-    # for word, count in word_count.iteritems():
-    #     return word + count
 
 
 def get_melon_price(melon_name):
