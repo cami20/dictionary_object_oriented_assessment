@@ -87,18 +87,20 @@ def word_length_sorted(words):
         [(2, ['ok']), (9, ['porcupine'])]
     """
     word_count = {}
+    count_tuples = []
+    i = 0
 
     for word in words:
         count = len(word)
         if count not in word_count:
-            word_count[count] = word
-        # else:
-        #     word_count[count].append(word)
-        #word_count[word] = word_count.get(word, 0) + 1
-        #print count
+            word_count[count] = [word]
+        else:
+            word_count[count].append(word)
+            word_count[count] = sorted(word_count[count])
 
-    for word in word_count.iteritems():
-        return word_count
+    count_tuples = word_count.items()
+        
+    return sorted(count_tuples)
 
 def translate_to_pirate_talk(phrase):
     """Translate phrase to pirate talk.
@@ -153,12 +155,18 @@ def translate_to_pirate_talk(phrase):
                                 "my": "me",
                                 "is": "be"}
 
-    translate_to_pirate_talk = " "
+    translate_to_pirate_talk = ""
+
+    translation = []
+
+    phrase = phrase.split()
 
     for word in phrase:
-        translate_to_pirate_talk = translate_to_pirate_talk + english_to_pirate_talk.get(word)
+        if not word[-1].isalpha():
+            word = word.rstrip()
+        translation.append(english_to_pirate_talk.get(word, word))
 
-    return translate_to_pirate_talk
+    return " ".join(translation)
 
 
 def kids_game(names):
@@ -207,16 +215,31 @@ def kids_game(names):
     good solutions here will definitely require a dictionary.
     """
 
+    # put the list of words in a dictionary
+    # isolated the first character of the word as the dictionary key
+    # the plan is to create a vairable that is the last character of 
+    # the word. Then to compare the first and last character and add
+    #it to the array if the word isn't in the array.
+
     kids_game = []
     words = {}
 
     for name in names:
-        count = name.index()
-        word[count] = name
+        first_char = name[0]
+        words[first_char] = name
 
     print words
+    kids_game.append(word[0][1])
+
+    for word in words.items():
+        end_char = word[-1]
+        # for word in words.items():
+        #     if end_char == words.keys():
+        #         if word not in kids_game:
+        #             kids_game.append(word)
 
 
+        
     return kids_game
 
 #####################################################################

@@ -43,6 +43,13 @@ Part 1: Discussion
 # Parts 2 through 5:
 # Create your classes and class methods
 
+#I got through part 3. I tested it and it worked
+#I am over half way through part 4 and it worded kinda by testing
+#still need to make it all work and to integrate part 5 into the 
+#program. 
+#I tested the parts of my program to make sure it worked the way I
+#expected it to in ipython. 
+
 class Student(object):
 
 	"""Stores students first and last names and their addresses"""
