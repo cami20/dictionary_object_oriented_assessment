@@ -226,17 +226,27 @@ def kids_game(names):
 
     for name in names:
         first_char = name[0]
-        words[first_char] = name
+        if first_char in words:
+            words[first_char].append(name)
+        else:
+            words[first_char] = [name]
 
-    print words
-    kids_game.append(word[0][1])
+    #print words
+    #kids_game.append(names[0])
+    word = name[0]
 
-    for word in words.items():
-        end_char = word[-1]
-        # for word in words.items():
-        #     if end_char == words.keys():
-        #         if word not in kids_game:
-        #             kids_game.append(word)
+    while word[-1] in words:
+        kids_game.append()
+        last_char = word[-1]
+        word = words[last_char]
+
+
+    # for word in words.items():
+    #     end_char = word[-1]
+    #     for word in words.items():
+    #         if end_char == words.keys():
+    #             if word not in kids_game:
+    #                 kids_game.append(word)
 
 
         
